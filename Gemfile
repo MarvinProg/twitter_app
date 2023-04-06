@@ -85,3 +85,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+group :prodaction do
+  gem 'pg', '~> 1.4', '>= 1.4.6'
+end
