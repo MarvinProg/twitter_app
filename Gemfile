@@ -84,8 +84,14 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'rails-controller-testing'
 end
 
 group :prodaction do
   gem 'pg', '~> 1.4', '>= 1.4.6'
 end
+
+# gem "cssbundling-rails", "~> 1.1"
+
+# gem "jsbundling-rails", "~> 1.1"
+
