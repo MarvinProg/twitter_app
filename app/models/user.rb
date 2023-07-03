@@ -5,11 +5,14 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
 
   before_save :email_in_downcase
+  # before_save { email.downcase! }
 
   # для руби 3.2.1 и более нужен гем gem 'bcrypt-ruby', '~> 3.1.2'
   has_secure_password
 
   def email_in_downcase
     self.email = email.downcase
+    # Нет неободимости. При таком методе, через self.email, не требуется жестко изменять строку. Она же сохраниться в нужном регистре. 
+    # self.email = email.downcase!
   end
 end
