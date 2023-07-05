@@ -131,3 +131,33 @@ aside {
 .gravatar_edit {
   margin-top: 15px;
 } 
+
+/* формы */
+input, textarea, select, .uneditable-input { 
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+} 
+
+input {
+  height: auto !important;
+} 
+
+#error_explanation {
+  color: red; 
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  } 
+}
+
+.field_with_errors { 
+  // Добавить !optional не самый хороший вариант. Лучше установить бутстрап правильно. 
+  // Тогда все переменные будут доступны. 
+  @extend .has-error !optional; 
+  .form-control {
+    // color: $danger-text-emphasis;
+    color: #dc3545;
+  } 
+} 
