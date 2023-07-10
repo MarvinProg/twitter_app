@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def new
+    # Этот объект нужен только для "интеграционных" тестов!
+    # для Rspec не нужен, скорее всего. 
+    # Объект создавать при переходе на страницу не нужно!
     @user = User.new
   end
 
@@ -13,7 +16,8 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)
     if @user.save 
-
+      flash[:success] = "Welcom to Twitter"
+      redirect_to @user
     else 
       render :new
     end
